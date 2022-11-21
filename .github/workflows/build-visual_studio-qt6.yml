@@ -62,7 +62,7 @@ jobs:
           $ProgressPreference = 'SilentlyContinue'
           Invoke-WebRequest -UseBasicParsing -Uri "https://ftp.openssl.org/source/old/1.1.1/openssl-1.1.1p.tar.gz" -OutFile ".\openssl-1.1.1p.zip"
           Expand-Archive -LiteralPath "openssl-1.1.1p.zip" -DestinationPath "."
-          Rename-Item "openssl-1.1" "openssl"
+          Rename-Item "openssl-1.1p" "openssl"
           Write-Output "${{ github.workspace }}\openssl" | Out-File -FilePath $Env:GITHUB_PATH -Encoding utf8 -Append
 
       - name: Setup SDL2
